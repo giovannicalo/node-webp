@@ -1,8 +1,10 @@
 # Node WebP
 
+[![Build Status](https://github.com/giovannicalo/node-webp/actions/workflows/build.yml/badge.svg)](https://github.com/giovannicalo/node-webp/actions/workflows/build.yml)
+
 ## Prerequisites
 
-* [CMake](https://cmake.org/) >= 3.21.1
+* [CMake](https://cmake.org/) >= 3.21.0
 
 ## Installation
 

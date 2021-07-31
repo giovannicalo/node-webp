@@ -1,6 +1,7 @@
 .editorconfig
 .eslintrc.js
 .gitattributes
+.github
 .gitignore
 .npmignore
 .vscode

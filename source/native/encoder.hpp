@@ -1,5 +1,7 @@
 #pragma once
 
+#include <math.h>
+
 #include <napi.h>
 
 #include <webp/encode.h>
