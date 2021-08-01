@@ -15,6 +15,13 @@ jobs:
       run: npm install --no-save
     - name: Lint
       run: npm run lint
+    - name: Test
+      run: npm test
+    - if: ${{matrix.os == 'ubuntu-20.04'}}
+      name: Test coverage
+      uses: coverallsapp/github-action@1.1.3
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
     strategy:
       matrix:
         os:

@@ -1,6 +1,7 @@
 # Node WebP
 
 [![Build Status](https://github.com/giovannicalo/node-webp/actions/workflows/build.yml/badge.svg)](https://github.com/giovannicalo/node-webp/actions/workflows/build.yml)
+[![Coverage Status](https://coveralls.io/repos/github/giovannicalo/node-webp/badge.svg)](https://coveralls.io/github/giovannicalo/node-webp)
 
 ## Prerequisites
 
@@ -24,25 +25,25 @@ const { promises: { readFile, writeFile } } = require("fs");
 const { Format, decode } = require("webp");
 
 (async () => {
-	const webp = await readFile("foo.webp");
-	const rgba = await decode(webp, Format.rgba);
-	console.log(rgba);
-	// {
-	//   data: Uint8ClampedArray(8294400) [...],
-	//   format: 0,
-	//   height: 1080,
-	//   width: 1920
-	// }
-	await writeFile("foo.rgba", rgba.data);
-	const yuv = await decode(webp, Format.yuv);
-	console.log(yuv);
-	// {
-	//   data: Uint8ClampedArray(3110400) [...],
-	//   format: 1,
-	//   height: 1080,
-	//   width: 1920
-	// }
-	await writeFile("foo.yuv", yuv.data);
+    const webp = await readFile("foo.webp");
+    const rgba = await decode(webp, Format.rgba);
+    console.log(rgba);
+    // {
+    //   data: Uint8ClampedArray(8294400) [...],
+    //   format: 0,
+    //   height: 1080,
+    //   width: 1920
+    // }
+    await writeFile("foo.rgba", rgba.data);
+    const yuv = await decode(webp, Format.yuv);
+    console.log(yuv);
+    // {
+    //   data: Uint8ClampedArray(3110400) [...],
+    //   format: 1,
+    //   height: 1080,
+    //   width: 1920
+    // }
+    await writeFile("foo.yuv", yuv.data);
 })();
 ```
 
@@ -54,16 +55,16 @@ const { promises: { readFile, writeFile } } = require("fs");
 const { Format, encode } = require("webp");
 
 (async () => {
-	const rgba = {
-		data: await readFile("foo.rgba"),
-		format: Format.rgba,
-		height: 1080,
-		width: 1920
-	};
-	const webp = await encode(rgba, 90);
-	console.log(webp);
-	// <Buffer ...>
-	await writeFile("foo.webp", webp);
+    const rgba = {
+        data: await readFile("foo.rgba"),
+        format: Format.rgba,
+        height: 1080,
+        width: 1920
+    };
+    const webp = await encode(rgba, 90);
+    console.log(webp);
+    // <Buffer ...>
+    await writeFile("foo.webp", webp);
 })();
 ```
 

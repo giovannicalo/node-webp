@@ -36,6 +36,7 @@ namespace nodeWebp {
 			uint64_t uvSize = uvStride * std::floor((height + 1) / 2);
 			uint64_t size = ySize + uvSize * 2;
 			image = new Image(Format::yuv, width, height, size);
+			std::memset(image->data, 0, size);
 			if (!WebPDecodeYUVInto(
 				source.Data(),
 				source.ByteLength(),

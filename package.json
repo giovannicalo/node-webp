@@ -15,8 +15,9 @@
 	},
 	"description": "WebP",
 	"devDependencies": {
-		"eslint": "^7.31.0",
-		"eslint-config-giovanni": "giovannicalo/eslint-config"
+		"eslint": "^7.32.0",
+		"eslint-config-giovanni": "giovannicalo/eslint-config",
+		"jest": "^27.0.6"
 	},
 	"engines": {
 		"node": "^16.5.0"
@@ -34,7 +35,9 @@
 		"build": "cmake-js compile",
 		"build-debug": "cmake-js compile --debug",
 		"install": "node scripts/install && npm run build",
-		"lint": "eslint -f pretty ."
+		"lint": "eslint -f pretty .",
+		"start": "jest --watch",
+		"test": "jest"
 	},
 	"version": "0.0.0"
 }
