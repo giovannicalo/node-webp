@@ -80,7 +80,7 @@ Standard RGBA format, supports both decoding and encoding.
 
 Value: 1
 
-YUV I420 format, currently supports only decoding. Smaller and faster than RGBA, but less straightforward. When the source WebP image has odd dimensions, they will be rounded up to the nearest even number.
+YUV I420 format, currently supports only decoding. Smaller and faster than RGBA, but less straightforward. When decoding, if the source WebP has odd dimensions, they will be rounded up to the nearest even number.
 
 ### `decode(data: Buffer, format = Format.rgba): Promise<Image>`
 
