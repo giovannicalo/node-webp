@@ -2,6 +2,7 @@
 
 #include "./decode.hpp"
 #include "./encode.hpp"
+#include "./format.hpp"
 
 Napi::Object initialize(Napi::Env environment, Napi::Object exports) {
 	exports.Set(

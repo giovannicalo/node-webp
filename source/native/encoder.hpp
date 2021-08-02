@@ -33,13 +33,13 @@ namespace nodeWebp {
 				float_t quality
 			);
 
-			~Encoder();
+			~Encoder() override;
 
-			void Execute();
+			void Execute() override;
 
-			void OnError(const Napi::Error& error);
+			void OnError(const Napi::Error& error) override;
 
-			void OnOK();
+			void OnOK() override;
 
 			Napi::Promise getPromise();
 

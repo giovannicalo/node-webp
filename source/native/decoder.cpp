@@ -13,8 +13,6 @@ namespace nodeWebp {
 		source(source)
 	{}
 
-	Decoder::~Decoder() {}
-
 	void Decoder::Execute() {
 		int32_t height = 0;
 		int32_t width = 0;
@@ -85,7 +83,7 @@ namespace nodeWebp {
 				Env(),
 				image->data,
 				image->size,
-				[](Napi::Env environment, void* data, void* image) {
+				[](Napi::Env, void*, void* image) {
 					delete static_cast<Image*>(image);
 				},
 				image

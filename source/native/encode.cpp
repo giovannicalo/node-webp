@@ -17,7 +17,7 @@ namespace nodeWebp {
 			).ThrowAsJavaScriptException();
 			return info.Env().Null();
 		}
-		Encoder* encoder = new Encoder(
+		auto encoder = new Encoder(
 			info.Env(),
 			info[0].As<Napi::Object>(),
 			info.Length() >= 2 ? info[1].As<Napi::Number>().FloatValue() : 90

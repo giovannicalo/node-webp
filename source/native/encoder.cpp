@@ -11,7 +11,7 @@ namespace nodeWebp {
 		promise(Napi::Promise::Deferred::New(environment)),
 		quality(quality)
 	{
-		Napi::Uint8Array data = source.Get("data").As<Napi::Uint8Array>();
+		auto data = source.Get("data").As<Napi::Uint8Array>();
 		image = new Image(
 			static_cast<Format>(source.Get("format").As<Napi::Number>().Int32Value()),
 			source.Get("width").As<Napi::Number>().Uint32Value(),
@@ -55,7 +55,7 @@ namespace nodeWebp {
 			Env(),
 			buffer,
 			size,
-			[](Napi::Env environment, void* data) {
+			[](Napi::Env, void* data) {
 				WebPFree(data);
 			}
 		));

@@ -17,7 +17,7 @@ namespace nodeWebp {
 			).ThrowAsJavaScriptException();
 			return info.Env().Null();
 		}
-		Decoder* decoder = new Decoder(
+		auto decoder = new Decoder(
 			info.Env(),
 			info[0].As<Napi::Uint8Array>(),
 			info.Length() >= 2 ? static_cast<Format>(
