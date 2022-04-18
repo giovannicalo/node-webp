@@ -20,7 +20,7 @@
 		"jest": "^27.3.1"
 	},
 	"engines": {
-		"node": "^17.0.1"
+		"node": ">=17.9.0"
 	},
 	"homepage": "https://github.com/giovannicalo/node-webp",
 	"keywords": ["decode", "encode", "i420", "libwebp", "native", "raw", "rgba", "webp", "yuv", "yuv420"],
