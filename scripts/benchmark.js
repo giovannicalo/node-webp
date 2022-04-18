@@ -19,7 +19,7 @@ const rgba = {
 const benchmark = async (label, method, ...parameters) => {
 	const start = Date.now();
 	for (let i = 0; i < iterations; i++) {
-		await method(...parameters); // eslint-disable-line no-await-in-loop
+		await method(...parameters);
 	}
 	console.log(`${label}: ${((Date.now() - start) / iterations).toFixed(2)}ms`);
 };
@@ -30,6 +30,6 @@ const benchmark = async (label, method, ...parameters) => {
 		["WebP => YUV ", decode, webp, Format.yuv],
 		["RGBA => WebP", encode, rgba, 90]
 	]) {
-		await benchmark(...parameters); // eslint-disable-line no-await-in-loop
+		await benchmark(...parameters);
 	}
 })();
