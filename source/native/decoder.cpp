@@ -74,7 +74,7 @@ void nodeWebp::Decoder::OnError(const Napi::Error& error) {
 
 void nodeWebp::Decoder::OnOK() {
 	Napi::Object output = Napi::Object::New(Env());
-	output.Set("data", Napi::Uint8Array::New(
+	output["data"] = Napi::Uint8Array::New(
 		Env(),
 		image->size,
 		Napi::ArrayBuffer::New(
@@ -88,19 +88,10 @@ void nodeWebp::Decoder::OnOK() {
 		),
 		0,
 		napi_uint8_clamped_array
-	));
-	output.Set(
-		"format",
-		Napi::Number::New(Env(), image->format)
 	);
-	output.Set(
-		"height",
-		Napi::Number::New(Env(), image->height)
-	);
-	output.Set(
-		"width",
-		Napi::Number::New(Env(), image->width)
-	);
+	output["format"] = Napi::Number::New(Env(), image->format);
+	output["height"] = Napi::Number::New(Env(), image->height);
+	output["width"] = Napi::Number::New(Env(), image->width);
 	promise.Resolve(output);
 }
 

@@ -5,24 +5,12 @@
 #include "format.hpp"
 
 Napi::Object initialize(Napi::Env environment, Napi::Object exports) {
-	exports.Set(
-		"decode",
-		Napi::Function::New(environment, nodeWebp::decode)
-	);
-	exports.Set(
-		"encode",
-		Napi::Function::New(environment, nodeWebp::encode)
-	);
+	exports["decode"] = Napi::Function::New(environment, nodeWebp::decode);
+	exports["encode"] = Napi::Function::New(environment, nodeWebp::encode);
 	Napi::Object format = Napi::Object::New(environment);
-	format.Set(
-		"rgba",
-		Napi::Number::New(environment, nodeWebp::Format::rgba)
-	);
-	format.Set(
-		"yuv",
-		Napi::Number::New(environment, nodeWebp::Format::yuv)
-	);
-	exports.Set("Format", format);
+	format["rgba"] = Napi::Number::New(environment, nodeWebp::Format::rgba);
+	format["yuv"] = Napi::Number::New(environment, nodeWebp::Format::yuv);
+	exports["Format"] = format;
 	return exports;
 }
 
