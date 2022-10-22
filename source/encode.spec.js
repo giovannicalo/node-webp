@@ -38,13 +38,13 @@ it("should encode an odd-sized RGBA image as WebP", async () => {
 it("should throw when given no arguments", () => {
 	expect(() => {
 		encode();
-	}).toThrow();
+	}).toThrow("[nodeWebp::encode] At least one argument is required");
 });
 
 it("should throw when the first argument is not an object", () => {
 	expect(() => {
 		encode(42);
-	}).toThrow();
+	}).toThrow("[nodeWebp::decode] Argument is not an object");
 });
 
 it("shouldn't throw when given more than two arguments", () => {
