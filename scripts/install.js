@@ -5,7 +5,7 @@ const { join } = require("path");
 const { extract } = require("tar");
 
 get(
-	"https://chromium.googlesource.com/webm/libwebp/+archive/b557776962a3dcc985d83bd4ed94e1e2e50d0fa2.tar.gz",
+	"https://chromium.googlesource.com/webm/libwebp/+archive/ca332209cb5567c9b249c86788cb2dbf8847e760.tar.gz",
 	async (response) => {
 		const path = join(__dirname, "..", "libraries", "libwebp");
 		await mkdir(path, { recursive: true });
