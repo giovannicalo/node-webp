@@ -30,7 +30,7 @@ ExternalProject_Add(
 	CMAKE_ARGS ${webpArguments} -DCMAKE_POSITION_INDEPENDENT_CODE=ON
 	GIT_REPOSITORY "https://chromium.googlesource.com/webm/libwebp"
 	GIT_SHALLOW TRUE
-	GIT_TAG "v1.3.2"
+	GIT_TAG "v1.4.0"
 	INSTALL_COMMAND ""
 )
 
