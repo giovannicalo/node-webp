@@ -9,8 +9,8 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(webpLibraries sharpyuv webp)
 
 if(MSVC)
-	set(CMAKE_CXX_FLAGS_DEBUG "/MTd /Zi")
-	set(CMAKE_CXX_FLAGS_RELEASE "/MT")
+	set(CMAKE_CXX_FLAGS_DEBUG "/Zi")
+	set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 	set(
 		webpArguments
 		-DCMAKE_C_FLAGS_DEBUG="/MTd /Zi"
