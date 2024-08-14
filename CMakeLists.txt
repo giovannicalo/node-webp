@@ -11,7 +11,6 @@ set(webpLibraries sharpyuv webp)
 if(MSVC)
 	set(CMAKE_CXX_FLAGS_DEBUG "/MTd /Zi")
 	set(CMAKE_CXX_FLAGS_RELEASE "/MT")
-	set(WITH_CRT_DLL FALSE)
 	set(
 		webpArguments
 		-DCMAKE_C_FLAGS_DEBUG="/MTd /Zi"
