@@ -29,13 +29,15 @@ ExternalProject_Add(
 	CMAKE_ARGS ${webpArguments} -DCMAKE_POSITION_INDEPENDENT_CODE=ON
 	GIT_REPOSITORY "https://chromium.googlesource.com/webm/libwebp"
 	GIT_SHALLOW TRUE
-	GIT_TAG "v1.4.0"
+	GIT_TAG "v1.5.0"
 	INSTALL_COMMAND ""
 )
 
 file(GLOB_RECURSE source "source/native/*")
 
 add_library(${PROJECT_NAME} SHARED ${source} ${CMAKE_JS_SRC})
+
+add_dependencies(${PROJECT_NAME} webpProject)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 
